@@ -70,3 +70,9 @@ When you're done, you can deactivate the virtual environment by running:
 ```bash
 deactivate
 ```
+
+## Dataset
+
+The project utilizes a diabetes prediction dataset, which can be downloaded from Kaggle:
+
+[Diabetes prediction dataset](https://www.kaggle.com/datasets/iammustafatz/diabetes-prediction-dataset)
