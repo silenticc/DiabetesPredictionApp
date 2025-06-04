@@ -2,12 +2,16 @@ import streamlit as st
 import numpy as np
 import joblib
 import requests
+import base64
 
 # Load the pre-trained model
 model = joblib.load("xgb_diabetes_model.pkl")
 
 # OpenRouter API key
-OPENROUTER_API_KEY = "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" 
+with open("secret.key", "r") as f:
+    encoded_key = f.read().strip()
+
+OPENROUTER_API_KEY = base64.b64decode(encoded_key.encode()).decode()
 
 def generate_health_advice(probability, age, bmi, glucose, hba1c, hypertension):
     prompt = (
